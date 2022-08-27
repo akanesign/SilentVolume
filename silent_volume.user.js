@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Silent Volume
-// @version      0.2
+// @version      0.3
 // @description  Please be quiet in the room
 // @author       akanesign
 // @match        https://tweetdeck.twitter.com/
@@ -9,6 +9,19 @@
 // @match        https://twitter.com/*
 // @match        https://twitter.com/*/*/*
 // @match        https://video.twimg.com/ext_tw_video/*/*/*/*/*
+// @match        https://www.nicovideo.jp/
+// @match        https://www.nicovideo.jp/*/*
+// @match        https://animestore.docomo.ne.jp/*/*
+// @match        https://www.amazon.co.jp/gp/video/detail/*/*
+// @match        https://tver.jp/episodes/*
+// @match        https://www.b-ch.com/titles/*/*
+// @match        https://www.netflix.com/*
+// @match        https://www.netflix.com/watch/*
+// @match        https://www.hulu.jp/watch/*
+// @match        https://fod.fujitv.co.jp/title/*/*
+// @match        https://video.fc2.com/content/*
+// @match        https://www.dmm.com/digital/*/*/*/*/*/*/*/*
+// @match        https://www.dazn.com/*/*/*/*
 // @require      https://code.jquery.com/jquery-3.5.1.min.js
 // @updateURL    https://github.com/akanesign/SilentVolume/raw/main/silent_volume.user.js
 // @downloadURL  https://github.com/akanesign/SilentVolume/raw/main/silent_volume.user.js
