@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Silent Volume
-// @version      0.1
+// @version      0.2
 // @description  Please be quiet in the room
 // @author       akanesign
 // @match        https://tweetdeck.twitter.com/
@@ -14,9 +14,14 @@
 var volume_default = 0.25;
 
 function set_volumes() {
-  var target = document.getElementsByTagName("video");
-  for( var cnt = 0; cnt < target.length; cnt++ ) {
-     target[ cnt ].volume = volume_default;
+  var date = new Date();
+  var time = date.getHours();
+
+  if ( time > 20 || time < 9 ) {
+    var target = document.getElementsByTagName("video");
+    for( var cnt = 0; cnt < target.length; cnt++ ) {
+       target[ cnt ].volume = volume_default;
+    }
   }
   setTimeout( set_volumes, 1000 );
 }
