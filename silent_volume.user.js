@@ -10,6 +10,8 @@
 // @match        https://twitter.com/*/*/*
 // @match        https://video.twimg.com/ext_tw_video/*/*/*/*/*
 // @require      https://code.jquery.com/jquery-3.5.1.min.js
+// @updateURL    https://github.com/akanesign/SilentVolume/raw/main/silent_volume.user.js
+// @downloadURL  https://github.com/akanesign/SilentVolume/raw/main/silent_volume.user.js
 // ==/UserScript==
 var volume_default = 0.25;
 
