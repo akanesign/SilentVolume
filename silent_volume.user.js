@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Silent Volume
-// @version      0.7
+// @version      0.8
 // @description  Please be quiet in the room
 // @author       akanesign
 // @match        https://tweetdeck.twitter.com/
@@ -27,6 +27,7 @@
 // @match        https://www.tiktok.com/*/*/*
 // @match        https://www.instagram.com/
 // @match        https://www.instagram.com/*/*
+// @match        https://www.disneyplus.com/ja-jp/video/*
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @require      https://code.jquery.com/jquery-3.5.1.min.js
