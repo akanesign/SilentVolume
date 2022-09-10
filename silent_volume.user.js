@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Silent Volume
-// @version      0.6
+// @version      0.7
 // @description  Please be quiet in the room
 // @author       akanesign
 // @match        https://tweetdeck.twitter.com/
@@ -55,7 +55,7 @@ function set_volumes() {
 
          var vl = document.createElement("input");
          vl.setAttribute("type", "range");
-         vl.setAttribute("title", "‰¹—Ê§ŒÀ:" + opt_Volume * 100 + "%");
+         vl.setAttribute("title", "éŸ³é‡åˆ¶é™:" + opt_Volume * 100 + "%");
          vl.setAttribute("class", "silent-volume");
          vl.setAttribute("min", "0");
          vl.setAttribute("max", "100");
@@ -66,7 +66,7 @@ function set_volumes() {
 
          vl.addEventListener('change', (event) => {
            GM_setValue( "opt_Volume", event.target.value/100 );
-           event.target.title = "‰¹—Ê§ŒÀ:" + event.target.value + "%";
+           event.target.title = "éŸ³é‡åˆ¶é™:" + event.target.value + "%";
          });
          dl.append(vl);
          pr.append(dl);
