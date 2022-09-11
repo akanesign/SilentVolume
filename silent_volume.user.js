@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Silent Volume
-// @version      0.8
+// @version      0.9
 // @description  Please be quiet in the room
 // @author       akanesign
 // @match        https://tweetdeck.twitter.com/
@@ -51,10 +51,10 @@ function set_volumes() {
 
        if( pr.querySelectorAll(".silent-volume").length == 0 ) {
          var dl = document.createElement("div");
-         dl.style.height = target[ cnt ].style.height;
-         dl.style.width = target[ cnt ].style.width;
-
+         var pl = document.createElement("p");
          var vl = document.createElement("input");
+         dl.setAttribute("style", "position: absolute; display: inline-block; padding: 2px 5px; background: #e0edff; border-radius: 15px; right:0; margin:10px;z-index:100;")
+         pl.setAttribute("style", "margin: 0; padding: 0;");
          vl.setAttribute("type", "range");
          vl.setAttribute("title", "音量制限:" + opt_Volume * 100 + "%");
          vl.setAttribute("class", "silent-volume");
@@ -63,13 +63,14 @@ function set_volumes() {
          vl.setAttribute("size", "10");
          vl.setAttribute("value", opt_Volume * 100);
          vl.setAttribute("step", "5");
-         vl.setAttribute("style", "right:0; position:absolute; margin:20px; width:100px; z-index:100;")
+         vl.setAttribute("style", "right:0; width:100px;")
 
          vl.addEventListener('change', (event) => {
            GM_setValue( "opt_Volume", event.target.value/100 );
            event.target.title = "音量制限:" + event.target.value + "%";
          });
-         dl.append(vl);
+         pl.append(vl);
+         dl.append(pl);
          pr.append(dl);
        }
     }
