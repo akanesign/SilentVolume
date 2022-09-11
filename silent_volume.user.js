@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Silent Volume
-// @version      1.2
+// @version      1.3
 // @description  Please be quiet in the room
 // @author       akanesign
 // @match        https://tweetdeck.twitter.com/
@@ -53,9 +53,12 @@ function set_volumes() {
          var dl = document.createElement("div");
          var pl = document.createElement("p");
          var vl = document.createElement("input");
+         var im = document.createElement("img");
          var vs = ( parseInt( target[ cnt ].clientWidth ) / 10 );
          dl.setAttribute("style", "position: absolute; display: inline-block; padding: 1px 5px; background: #e0edff; border-radius: 15px; right:0; margin:10px;z-index:100;opacity:0.8;")
-         pl.setAttribute("style", "margin: 0; padding: 0;");
+         pl.setAttribute("style", "margin: 0; padding: 0;text-align:center;");
+         im.setAttribute("src", "https://github.com/akanesign/SilentVolume/raw/main/image/silent.png");
+         im.setAttribute("style", "height:10px;");
          vl.setAttribute("type", "range");
          vl.setAttribute("title", "音量制限:" + opt_Volume * 100 + "%");
          vl.setAttribute("class", "silent-volume");
@@ -70,6 +73,7 @@ function set_volumes() {
            GM_setValue( "opt_Volume", event.target.value / 100 );
            event.target.title = "音量制限:" + event.target.value + "%";
          });
+         pl.append(im);
          pl.append(vl);
          dl.append(pl);
          pr.append(dl);
