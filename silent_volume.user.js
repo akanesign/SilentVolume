@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Silent Volume
-// @version      1.1
+// @version      1.2
 // @description  Please be quiet in the room
 // @author       akanesign
 // @match        https://tweetdeck.twitter.com/
@@ -54,7 +54,7 @@ function set_volumes() {
          var pl = document.createElement("p");
          var vl = document.createElement("input");
          var vs = ( parseInt( target[ cnt ].clientWidth ) / 10 );
-         dl.setAttribute("style", "position: absolute; display: inline-block; padding: 1px 5px; background: #e0edff; border-radius: 15px; right:0; margin:10px;z-index:100;")
+         dl.setAttribute("style", "position: absolute; display: inline-block; padding: 1px 5px; background: #e0edff; border-radius: 15px; right:0; margin:10px;z-index:100;opacity:0.8;")
          pl.setAttribute("style", "margin: 0; padding: 0;");
          vl.setAttribute("type", "range");
          vl.setAttribute("title", "音量制限:" + opt_Volume * 100 + "%");
