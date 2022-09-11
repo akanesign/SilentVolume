@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Silent Volume
-// @version      1.3
+// @version      1.4
 // @description  Please be quiet in the room
 // @author       akanesign
 // @match        https://tweetdeck.twitter.com/
@@ -67,7 +67,7 @@ function set_volumes() {
          vl.setAttribute("size", "10");
          vl.setAttribute("value", opt_Volume * 100);
          vl.setAttribute("step", "5");
-         vl.setAttribute("style", "right:0; height:10px; width:"+vs+"px;")
+         vl.setAttribute("style", "right:0; height:10px; min-width:80px; width:"+vs+"px;")
 
          vl.addEventListener('change', (event) => {
            GM_setValue( "opt_Volume", event.target.value / 100 );
