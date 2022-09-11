@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Silent Volume
-// @version      0.9
+// @version      1.0
 // @description  Please be quiet in the room
 // @author       akanesign
 // @match        https://tweetdeck.twitter.com/
@@ -53,7 +53,9 @@ function set_volumes() {
          var dl = document.createElement("div");
          var pl = document.createElement("p");
          var vl = document.createElement("input");
-         dl.setAttribute("style", "position: absolute; display: inline-block; padding: 2px 5px; background: #e0edff; border-radius: 15px; right:0; margin:10px;z-index:100;")
+         alert(parseInt( target[ cnt ].clientWidth));
+         var vs = ( parseInt( target[ cnt ].clientWidth ) / 10 );
+         dl.setAttribute("style", "position: absolute; display: inline-block; padding: 1px 5px; background: #e0edff; border-radius: 15px; right:0; margin:10px;z-index:100;")
          pl.setAttribute("style", "margin: 0; padding: 0;");
          vl.setAttribute("type", "range");
          vl.setAttribute("title", "音量制限:" + opt_Volume * 100 + "%");
@@ -63,10 +65,10 @@ function set_volumes() {
          vl.setAttribute("size", "10");
          vl.setAttribute("value", opt_Volume * 100);
          vl.setAttribute("step", "5");
-         vl.setAttribute("style", "right:0; width:100px;")
+         vl.setAttribute("style", "right:0; height:10px; width:"+vs+"px;")
 
          vl.addEventListener('change', (event) => {
-           GM_setValue( "opt_Volume", event.target.value/100 );
+           GM_setValue( "opt_Volume", event.target.value / 100 );
            event.target.title = "音量制限:" + event.target.value + "%";
          });
          pl.append(vl);
