@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Silent Volume
-// @version      1.4
+// @version      1.5
 // @description  Please be quiet in the room
 // @author       akanesign
 // @match        https://tweetdeck.twitter.com/
@@ -58,7 +58,7 @@ function set_volumes() {
          dl.setAttribute("style", "position: absolute; display: inline-block; padding: 1px 5px; background: #e0edff; border-radius: 15px; right:0; margin:10px;z-index:100;opacity:0.8;")
          pl.setAttribute("style", "margin: 0; padding: 0;text-align:center;");
          im.setAttribute("src", "https://github.com/akanesign/SilentVolume/raw/main/image/silent.png");
-         im.setAttribute("style", "height:10px;");
+         im.setAttribute("style", "height:10px; vertical-align:middle;");
          vl.setAttribute("type", "range");
          vl.setAttribute("title", "音量制限:" + opt_Volume * 100 + "%");
          vl.setAttribute("class", "silent-volume");
@@ -67,7 +67,7 @@ function set_volumes() {
          vl.setAttribute("size", "10");
          vl.setAttribute("value", opt_Volume * 100);
          vl.setAttribute("step", "5");
-         vl.setAttribute("style", "right:0; height:10px; min-width:80px; width:"+vs+"px;")
+         vl.setAttribute("style", "vertical-align:middle; right:0; height:10px; min-width:80px; width:"+vs+"px;")
 
          vl.addEventListener('change', (event) => {
            GM_setValue( "opt_Volume", event.target.value / 100 );
