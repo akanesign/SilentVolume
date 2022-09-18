@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Silent Volume
-// @version      1.5
+// @version      1.6
 // @description  Please be quiet in the room
 // @author       akanesign
 // @match        https://tweetdeck.twitter.com/
@@ -30,7 +30,6 @@
 // @match        https://www.disneyplus.com/ja-jp/video/*
 // @grant        GM_getValue
 // @grant        GM_setValue
-// @require      https://code.jquery.com/jquery-3.5.1.min.js
 // @updateURL    https://github.com/akanesign/SilentVolume/raw/main/silent_volume.user.js
 // @downloadURL  https://github.com/akanesign/SilentVolume/raw/main/silent_volume.user.js
 // ==/UserScript==
@@ -59,6 +58,9 @@ function set_volumes() {
          pl.setAttribute("style", "margin: 0; padding: 0;text-align:center;");
          im.setAttribute("src", "https://github.com/akanesign/SilentVolume/raw/main/image/silent.png");
          im.setAttribute("style", "height:10px; vertical-align:middle;");
+         im.onerror = function() {
+             this.remove();
+         };
          vl.setAttribute("type", "range");
          vl.setAttribute("title", "音量制限:" + opt_Volume * 100 + "%");
          vl.setAttribute("class", "silent-volume");
@@ -83,6 +85,14 @@ function set_volumes() {
   setTimeout( set_volumes, 1000 );
 }
 
-$(document).ready(function(){
+function ready(callback){
+    if (document.readyState!='loading') callback();
+    else if (document.addEventListener) document.addEventListener('DOMContentLoaded', callback);
+    else document.attachEvent('onreadystatechange', function(){
+        if (document.readyState=='complete') callback();
+    });
+}
+
+ready(function(){
   setTimeout( set_volumes, 1000 );
-})();
+});
