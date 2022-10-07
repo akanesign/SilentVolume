@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Silent Volume
-// @version      1.6
+// @version      1.7
 // @description  Please be quiet in the room
 // @author       akanesign
 // @match        https://tweetdeck.twitter.com/
-// @match        https://www.youtube.com/watch?*
-// @match        https://youtube.com/watch?*
+// @match        https://www.youtube.com/watch?v=*
+// @match        https://youtube.com/watch?v=*
 // @match        https://twitter.com/*
 // @match        https://twitter.com/*/*/*
 // @match        https://video.twimg.com/ext_tw_video/*/*/*/*/*
